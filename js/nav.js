@@ -12,3 +12,17 @@ if (visibility === "false"){
     navToggle.setAttribute('aria-expanded', false)
 }
 })
+
+let lastScrollTop = 0;
+    navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        if (scrollLeft > lastScrollTop) {
+            navbar.style.Left="100px";
+        } else {
+            navbar.style.Left="-100px"
+        }
+        lastScrollTop = scrollLeft
+    })
+
+
